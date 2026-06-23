@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BankApp|Signup</title>
 </head>
-
 <body>
     <center>
         <h1>Signup Here</h1>
@@ -31,35 +29,37 @@
     </center>
 
     <script>
-        document.getElementById("signupform").addEventListener("submit", function (event) {
+        document.getElementById("signupform").addEventListener("submit",function(event)
+        {
             event.preventDefault();
-            let uname = document.getElementById("uname").value;
-            let uemail = document.getElementById("uemail").value;
-            let upass = document.getElementById("upass").value;
-            let ucpass = document.getElementById("ucpass").value;
-            console.log(uname, uemail, upass, ucpass);
+            let uname=document.getElementById("uname").value;
+            let uemail=document.getElementById("uemail").value;
+            let upass=document.getElementById("upass").value;
+            let ucpass=document.getElementById("ucpass").value;
+            console.log(uname,uemail,upass,ucpass);
 
-            let user = { uname: uname, uemail: uemail, upass: upass };
-            let userlist = JSON.parse(localStorage.getItem("userlist")) || [];
+            let user={uname:uname,uemail:uemail,upass:upass};
+            let userlist=JSON.parse(localStorage.getItem("userlist"))||[];
             userlist.push(user);
             console.log(userlist);
-
-            if (upass === ucpass) {
+            
+            if(upass===ucpass)
+            {
                 // localStorage.setItem("uname",uname);
                 // localStorage.setItem("uemail",uemail);
                 // localStorage.setItem("upass",upass);
-                localStorage.setItem("userlist", JSON.stringify(userlist));
+                localStorage.setItem("userlist",JSON.stringify(userlist));
 
                 alert("Registration successfully done!!!");
-                window.location.href = "signin.html";
+                window.location.href="signin.html";   
             }
-            else {
+            else
+            {
                 alert("Password and Confirm password does not match. Try again!!!");
             }
-
+            
         });
 
     </script>
 </body>
-
 </html>
